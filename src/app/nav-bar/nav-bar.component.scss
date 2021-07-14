@@ -1,0 +1,50 @@
+@import "../../styles";
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  background-color: $color-lime-red;
+  padding: 20px 20px;
+  margin-bottom: 15px;
+
+  div {
+    padding: 0px 10px;
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
+    display: inline-block;
+    .logo-icon {
+      height: 110%;
+    }
+  }
+
+  .contact {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .title {
+    display: inline-block;
+    font-family: $font-text;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: $color-black;
+    margin-left: -10px;
+  }
+
+  .line {
+    height: 30px;
+    border-left: 1px solid $color-black;
+  }
+
+  .sign-in {
+    cursor: pointer;
+  }
+}
+
+

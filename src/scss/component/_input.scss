@@ -1,0 +1,21 @@
+@import "../abstract/variable";
+
+.input-small {
+
+}
+
+.input-medium {
+  width: 90%;
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 5px;
+  margin: 5px 0px;
+}
+
+.input-large {
+  width: 85%;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 15px;
+}

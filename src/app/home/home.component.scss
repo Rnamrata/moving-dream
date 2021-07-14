@@ -1,0 +1,31 @@
+@import "../../styles";
+
+.body {
+  background: url("../../assets/image/home/home.jpg") no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size:  cover;
+  -o-background-size: cover;
+  height: 56vh;
+  position: relative;
+
+  .search {
+    padding: 18% 30%;
+
+    .search-tag {
+      font-family: $font-text;
+      font-size: 2rem;
+    }
+
+    .search-input {
+      margin: 10px 10px 0px 0px;
+    }
+
+    .search-button {
+      background: $color-chili-red;
+      color: white;
+      font-family: $font-text;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import "../../../styles";
+
+.container {
+  position: absolute;
+  background: $color-lime-red;
+  height: 60vh;
+  width: 40vw;
+  margin: 10% 28%;
+
+  .logo {
+    width: 45%;
+    height: 0%;
+    margin: 5%;
+    display: block;
+  }
+
+  .title {
+    text-align: center;
+    color: $color-black;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 1.75rem;
+    font-family: $font-text;
+    margin-left: 15%;
+  }
+
+  .line {
+    height: 50vh;
+    border-left: 2px solid $color-brown;
+    margin: 45px 0px;
+  }
+
+  .sign-in-or-sign-up {
+    padding: 100px 0px;
+
+    .sign-in-text{
+      text-align: center;
+      color: $color-brown;
+      font-weight: bolder;
+      font-style: italic;
+      font-size: 1.625rem;
+      font-family: $font-text;
+      display: block;
+    }
+
+    .sign-up-text {
+      text-align: center;
+      font-size: 0.875rem;
+      font-family: $font-text;
+      display: block;
+    }
+
+    .guest-button {
+      margin-top: 15%;
+      background: $color-white;
+
+      .guest-text {
+        font-family: $font-text;
+        font-weight: bold;
+      }
+    }
+
+  }
+}
