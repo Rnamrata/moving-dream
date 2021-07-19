@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, NavigationEnd, Event as NavigationEvent,} from '@angular/router';
+import {AuthenticationService} from '../../services/data-service/authentication.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,12 +10,21 @@ import {Router, NavigationEnd, Event as NavigationEvent,} from '@angular/router'
 export class NavBarComponent implements OnInit {
 
   hideNavBar = false;
+  user = '';
+  
   constructor(
-    public router: Router
+    public router: Router,
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
+    console.log(this.authService.user.userName);
+    this.setUser();
     this.checkRoute();
+  }
+
+  setUser(): void {
+    this.user = this.authService.user.userName != '' ? this.authService.user.userName : '';
   }
 
   checkRoute(): void {
@@ -26,6 +36,7 @@ export class NavBarComponent implements OnInit {
       }
     );
   }
+
   goToHome(): void {
     this.router.navigate(['home']);
   }

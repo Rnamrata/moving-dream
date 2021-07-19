@@ -6,7 +6,83 @@
   -webkit-background-size: cover;
   -moz-background-size:  cover;
   -o-background-size: cover;
-  height: 97vh;
-  width: 99vw;
+  height: 96vh;
+  width: 98vw;
+  margin: 1%;
   position: relative;
+
+  .login-container {
+    position: absolute;
+    background-color: $color-lime-yellow;
+    height: 60%;
+    width: 45%;
+    margin: 8% 27%;
+    padding: 1%;
+
+    .logo-and-title {
+      height: 30%;
+      display: flex;
+      justify-content: center;
+
+      .logo {
+        height: 10vh;
+      }
+
+      .title {
+        padding-top: 2%;
+        color: #79210B;
+        font-weight: 100;
+        font-size: 2rem;
+        font-style: italic;
+        font-variant: small-caps;
+        position: relative;
+      }
+    }
+
+    .sign-in-or-sign-up {
+      display: grid;
+      justify-content: center;
+
+      .sign-in-text{
+        text-align: center;
+        color: $color-brown;
+        font-weight: bolder;
+        font-style: italic;
+        font-size: 1.625rem;
+        font-family: $font-text;
+        display: block;
+      }
+
+      .sign-up-text {
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: $font-text;
+        display: block;
+      }
+
+      .continue-button {
+        margin-top: 15%;
+        background: $color-chili-red;
+        outline: none;
+        border: none;
+        color: $color-white;
+        width: -webkit-fill-available;
+        margin-top: 2%;
+        height: 95%;
+      }
+      .guest-button {
+        margin-top: 15%;
+        background: $color-white;
+        border: 1px solid;
+        width: -webkit-fill-available;
+        height: 50%;
+
+        .guest-text {
+          font-family: $font-text;
+          font-weight: bold;
+        }
+      }
+
+    }
+  }
 }
