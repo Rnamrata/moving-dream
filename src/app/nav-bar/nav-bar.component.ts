@@ -11,14 +11,14 @@ export class NavBarComponent implements OnInit {
 
   hideNavBar = false;
   user = '';
-  
+
   constructor(
     public router: Router,
     private authService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.authService.user.userName);
+    console.log(this.router.url);
     this.setUser();
     this.checkRoute();
   }

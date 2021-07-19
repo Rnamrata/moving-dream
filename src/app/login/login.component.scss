@@ -19,6 +19,12 @@
     margin: 8% 27%;
     padding: 1%;
 
+    .error {
+      color: $color-chili-red;
+      font-size: 0.875rem;
+      font-family: $font-text;
+    }
+
     .logo-and-title {
       height: 30%;
       display: flex;
