@@ -4,6 +4,7 @@ import {AuthenticationService} from '../../services/data-service/authentication.
 import {Router} from '@angular/router';
 import {ShowHideService} from 'ngx-show-hide-password';
 import {untilDestroyed} from 'ngx-take-until-destroy';
+import {UserService} from '../../services/api-service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   loggedIn = false;
   isHidden = true;
   error = '';
+  userTypes = [
+    {typeName: 'customer', checked: false},
+    {typeName: 'employee', checked: false}
+  ];
+
   user = this.formBuilder.group({
     userName: ['', [Validators.required]],
+    userType: ['', [Validators.required]],
     password: ['', [Validators.required]]
   });
 
@@ -24,7 +31,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
     private router: Router,
-    private showHideService: ShowHideService
+    private showHideService: ShowHideService,
+    private userService: UserService
   ) {
     this.showHideService
       .getObservable('password1')
@@ -37,14 +45,38 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
-  loginAsUser(): void {
-    if (this.user.get('userName')?.valid && this.user.get('password')?.valid) {
-      this.error = '';
-      this.loggedIn = true;
-      this.authService.user.userName = this.user.get('userName')?.value;
-      console.log(this.user);
-      this.authService.loggedIn = this.loggedIn;
-      this.redirect();
+  selectUserType(type: any): void {
+    this.userTypes.forEach((element) => {
+      element.checked = element.typeName == type.typeName;
+    });
+    this.user.controls.userType.setValue(type.typeName);
+  }
+
+  async loginAsUser(): Promise<void> {
+    if (this.user.get('userName')?.valid &&
+      this.user.get('userType')?.valid &&
+      this.user.get('password')?.valid
+    ) {
+      const body = {
+        userName: this.user.get('userName')?.value,
+        userType: this.user.get('userType')?.value,
+        userPassword: this.user.get('password')?.value
+      };
+      try{
+        const userData = await this.userService.loginWithPassword(body).toPromise();
+        this.error = '';
+        this.loggedIn = true;
+        this.authService.user.userName = this.user.get('userName')?.value;
+        this.authService.user.userType = this.user.get('userType')?.value;
+        this.authService.user.userId = userData.response.userId;
+        this.authService.user.authToken = userData.response.accessToken;
+        // console.log(this.authService.user);
+        this.authService.loggedIn = this.loggedIn;
+        this.redirect();
+      }
+      catch (error) {
+        console.log(error);
+      }
     }
     else {
       this.error = '* User info or password missing';

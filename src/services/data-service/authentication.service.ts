@@ -7,7 +7,10 @@ export class AuthenticationService {
 
   loggedIn = false;
   user = {
-    userName: ''
+    userName: '',
+    userType: '',
+    userId: '',
+    authToken: ''
   };
 
   constructor() { }

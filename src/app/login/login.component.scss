@@ -26,7 +26,7 @@
     }
 
     .logo-and-title {
-      height: 30%;
+      height: 25%;
       display: flex;
       justify-content: center;
 
@@ -48,6 +48,16 @@
     .sign-in-or-sign-up {
       display: grid;
       justify-content: center;
+
+      .user-type {
+        display: flex;
+        margin: 15px;
+        .user-type-name {
+          margin-top: 16%;
+          margin-left: 5%;
+          text-transform: capitalize;
+        }
+      }
 
       .sign-in-text{
         text-align: center;

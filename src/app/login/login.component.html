@@ -6,7 +6,21 @@
     </div>
     <div class="sign-in-or-sign-up">
       <span class="sign-in-text">Sign In</span>
-      <input class="input-medium" type="text" formControlName="userName" placeholder="Enter username or email">
+
+      <div class="user-type">
+        <div *ngFor="let type of userTypes" class="row">
+          <div class="col-1">
+            <label (click)="selectUserType(type)" class="radio-button">
+              <input [checked]="type.checked" type="radio" class="radio-button">
+              <span></span>
+            </label>
+          </div>
+          <div class="col-2 user-type-name">
+            <span>{{type.typeName}}</span>
+          </div>
+        </div>
+      </div>
+      <input class="input-medium" type="text" formControlName="userName" placeholder="Enter username">
       <input class="input-medium" id="password" type="password" formControlName="password" placeholder="Enter Password" showHideInput>
       <span class="error">{{error}}</span>
       <span class="sign-up-text">Don't have any account? <span class="clickable">Create new account</span></span>

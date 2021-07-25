@@ -18,7 +18,7 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.router.url);
+    // console.log(this.router.url);
     this.setUser();
     this.checkRoute();
   }

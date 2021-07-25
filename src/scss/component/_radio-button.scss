@@ -1,0 +1,22 @@
+@import '../abstract/variable';
+
+.radio-button {
+  cursor: pointer;
+  input {
+    position: relative;
+    z-index: -9999;
+    //left: 40%;
+  }
+
+  span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    //float: right;
+    background: url("../../assets/icon/common/unselected-radio-button.svg");
+  }
+
+  input:checked + span {
+    background: url("../../assets/icon/common/selected-radio-button.svg");
+  }
+}
