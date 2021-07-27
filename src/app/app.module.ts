@@ -11,13 +11,16 @@ import { LoginModule } from './login/login.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
+import {SignUpComponent} from './sign-up/sign-up.component';
+import {SignUpModule} from './sign-up/sign-up.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
     LoginModule,
     NgbModule,
     ReactiveFormsModule,
-    ShowHidePasswordModule
+    ShowHidePasswordModule,
+    SignUpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

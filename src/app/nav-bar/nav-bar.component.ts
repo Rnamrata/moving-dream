@@ -18,9 +18,9 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // console.log(this.router.url);
-    this.setUser();
+    console.log(this.router.url);
     this.checkRoute();
+    this.setUser();
   }
 
   setUser(): void {
@@ -28,13 +28,9 @@ export class NavBarComponent implements OnInit {
   }
 
   checkRoute(): void {
-    this.router.events.subscribe(
-      (event: NavigationEvent) => {
-        if (event instanceof NavigationEnd) {
-          this.hideNavBar = this.router.url.includes('/login');
-        }
-      }
-    );
+    console.log('checking');
+    this.hideNavBar = this.router.url.includes('/login') || this.router.url.includes('/signUp');
+    console.log(this.hideNavBar);
   }
 
   goToHome(): void {
@@ -42,6 +38,7 @@ export class NavBarComponent implements OnInit {
   }
 
   goToLogin(): void {
+    this.authService.loggedIn = false;
     this.router.navigate(['login']);
   }
 }

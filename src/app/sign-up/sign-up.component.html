@@ -1,0 +1,8 @@
+<div class="background-image">
+    <div *ngIf="authService.user.userType == 'customer'">
+      <app-customer></app-customer>
+    </div>
+    <div *ngIf="authService.user.userType == 'employee'">
+      <app-employee></app-employee>
+    </div>
+</div>

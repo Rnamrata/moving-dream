@@ -20,10 +20,12 @@
           </div>
         </div>
       </div>
-      <input class="input-medium" type="text" formControlName="userName" placeholder="Enter username">
-      <input class="input-medium" id="password" type="password" formControlName="password" placeholder="Enter Password" showHideInput>
+      <input class="input-large" type="text" formControlName="userName" placeholder="Enter username">
+      <input class="input-large" id="password" type="password" formControlName="password" placeholder="Enter Password" showHideInput>
       <span class="error">{{error}}</span>
-      <span class="sign-up-text">Don't have any account? <span class="clickable">Create new account</span></span>
+      <span class="sign-up-text">
+        Don't have any account? <span class="clickable" (click)="createNewUser()">Create new account</span>
+      </span>
       <button class="button-large continue-button" (click)="loginAsUser()">
         Continue
       </button>

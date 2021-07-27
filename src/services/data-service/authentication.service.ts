@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
 
   loggedIn = false;
+  showLoginModal = '';
   user = {
     userName: '',
     userType: '',

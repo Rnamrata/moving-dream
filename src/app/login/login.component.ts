@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthenticationService,
+    public authService: AuthenticationService,
     private router: Router,
     private showHideService: ShowHideService,
     private userService: UserService
@@ -46,10 +46,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   selectUserType(type: any): void {
+    this.error = '';
     this.userTypes.forEach((element) => {
       element.checked = element.typeName == type.typeName;
     });
     this.user.controls.userType.setValue(type.typeName);
+    this.authService.user.userType = this.user.get('userType')?.value;
   }
 
   async loginAsUser(): Promise<void> {
@@ -67,7 +69,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.error = '';
         this.loggedIn = true;
         this.authService.user.userName = this.user.get('userName')?.value;
-        this.authService.user.userType = this.user.get('userType')?.value;
         this.authService.user.userId = userData.response.userId;
         this.authService.user.authToken = userData.response.accessToken;
         // console.log(this.authService.user);
@@ -79,7 +80,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     }
     else {
-      this.error = '* User info or password missing';
+      this.error = '* User type, info or password missing';
     }
   }
 
@@ -94,6 +95,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     else {
       this.router.navigate(['login']);
+    }
+  }
+
+  createNewUser(): void {
+    if (this.user.get('userType')?.valid) {
+      this.authService.loggedIn = true;
+      this.router.navigate(['signUp']);
+    }
+    else {
+      this.error = '* Select user type';
     }
   }
 
