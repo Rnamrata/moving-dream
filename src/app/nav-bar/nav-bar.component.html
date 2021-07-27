@@ -7,5 +7,12 @@
     <img src="../../assets/icon/header/contact-us.svg" class="contact-icon">
   </div>
   <div class="line"></div>
-  <div *ngIf="user == ''" (click)="goToLogin()" class="sign-in">Sign In</div>
-  <div *ngIf="user != ''" class="user">{{user}}</div></nav>
+  <div *ngIf="user == ''" (click)="goToLogin()" class="pointer">Sign In</div>
+  <div *ngIf="user != ''" class="user pointer">
+    <span data-toggle="dropdown" (click)="logOut()">{{user}}</span>
+  </div>
+</nav>
+
+<div class="dropdown-menu">
+  <span class="pointer" (click)="logOut()">Sign Up</span>
+</div>

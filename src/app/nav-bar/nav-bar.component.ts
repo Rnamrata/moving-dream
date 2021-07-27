@@ -34,11 +34,16 @@ export class NavBarComponent implements OnInit {
   }
 
   goToHome(): void {
-    this.router.navigate(['home']);
+    this.authService.redirect('home');
   }
 
   goToLogin(): void {
     this.authService.loggedIn = false;
-    this.router.navigate(['login']);
+    this.authService.redirect('login');
+  }
+
+  logOut(): void {
+    // this.authService.user.reset();
+    this.goToLogin();
   }
 }

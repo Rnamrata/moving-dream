@@ -21,7 +21,8 @@
         </div>
       </div>
       <input class="input-large" type="text" formControlName="userName" placeholder="Enter username">
-      <input class="input-large" id="password" type="password" formControlName="password" placeholder="Enter Password" showHideInput>
+      <input class="input-large" id="password" type="password" formControlName="password" placeholder="Enter Password"
+             (keyup.enter)="loginAsUser()" showHideInput>
       <span class="error">{{error}}</span>
       <span class="sign-up-text">
         Don't have any account? <span class="clickable" (click)="createNewUser()">Create new account</span>
