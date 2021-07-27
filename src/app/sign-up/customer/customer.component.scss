@@ -3,9 +3,9 @@
 .container {
   position: absolute;
   background-color: $color-lime-yellow;
-  height: 70%;
-  width: 30%;
-  margin: 6% 35%;
+  height: 75%;
+  width: 40%;
+  margin: 5% 30%;
   padding: 1%;
 
   .title {
@@ -15,8 +15,6 @@
   }
 
   .user-info {
-    padding: 5% 0%;
-    display: grid;
-    justify-content: center;
+    padding: 5%;
   }
 }
