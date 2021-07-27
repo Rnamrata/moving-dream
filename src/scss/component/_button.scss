@@ -1,5 +1,7 @@
+//@import "../../styles";
+
 .button-small {
-  height: 5vh;
+  height: 4vh;
   width: 5vw;
   border: 1px solid;
   border-radius: 5px;
@@ -14,4 +16,18 @@
   height: 10%;
   border: 2px solid;
   border-radius: 5px;
+}
+
+.sign-up-button {
+  border: none;
+  float: right;
+  color: $color-white;
+  background-color: $color-green;
+}
+
+.back-button {
+  border: none;
+  float: left;
+  color: $color-white;
+  background-color: $color-chili-red;
 }

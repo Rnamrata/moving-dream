@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
 
+  ngOnDestroy(): void {}
+
   selectUserType(type: any): void {
     this.error = '';
     this.userTypes.forEach((element) => {
@@ -107,6 +109,4 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.error = '* Select user type';
     }
   }
-
-  ngOnDestroy(): void {}
 }

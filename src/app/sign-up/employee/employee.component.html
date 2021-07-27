@@ -19,11 +19,20 @@
     </div>
     <div>
       <label>Password:</label><br>
-      <input class="input-large" type="text" formControlName="password" placeholder="Enter password">
+      <input class="input-large" id="password" type="password" formControlName="password" placeholder="Enter password">
     </div>
+    <span class="error">{{error}}</span>
     <div>
       <label>Confirm Password:</label><br>
-      <input class="input-large" type="text" formControlName="confirmPassword" placeholder="Confirm Password">
+      <input class="input-large" id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+    </div>
+    <div class="action-button row">
+      <div class="col-6">
+        <button class="button-small back-button" (click)="authService.redirect('login')">Back</button>
+      </div>
+      <div class="col-6">
+        <button class="button-small sign-up-button" (click)="signUp()">Sign Up</button>
+      </div>
     </div>
   </div>
 </div>

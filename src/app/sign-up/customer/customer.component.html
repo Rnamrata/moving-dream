@@ -12,23 +12,27 @@
       </div>
       <div>
         <label>Contact Person First Name: [Optional]</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="Contact Person Name">
+        <input class="input-large" type="text" formControlName="contactFirst" placeholder="Contact Person Name">
       </div>
       <div>
         <label>Address Line 1:</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="Address Line 1">
+        <input class="input-large" type="text" formControlName="addressLine1" placeholder="Address Line 1">
       </div>
       <div>
         <label>City:</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="City">
+        <input class="input-large" type="text" formControlName="city" placeholder="City">
       </div>
       <div>
-        <label>Postal Code:</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="Postal Code">
+        <label>Postal Code: [Optional]</label><br>
+        <input class="input-large" type="text" formControlName="postalCode" placeholder="Postal Code">
       </div>
       <div>
         <label>Password:</label><br>
-        <input class="input-large" type="text" formControlName="password" placeholder="Enter password">
+        <input class="input-large" id="password" type="password" formControlName="password" placeholder="Enter password">
+      </div>
+      <span class="error">{{error}}</span>
+      <div>
+        <button class="button-small back-button" (click)="authService.redirect('login')">Back</button>
       </div>
     </div>
     <div class="col-6">
@@ -41,16 +45,16 @@
         <input class="input-large" type="text" formControlName="lastName" placeholder="Last name">
       </div>
       <div>
-        <label>Contact Person First Name: [Optional]</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="Contact Person Name">
+        <label>Contact Person Last Name: [Optional]</label><br>
+        <input class="input-large" type="text" formControlName="contactLast" placeholder="Contact Person Name">
       </div>
       <div>
         <label>Address Line 2: [Optional]</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="Address Line 2">
+        <input class="input-large" type="text" formControlName="addressLine2" placeholder="Address Line 2">
       </div>
       <div>
         <label>State: [Optional]</label><br>
-        <input class="input-large" type="text" formControlName="phone" placeholder="State">
+        <input class="input-large" type="text" formControlName="state" placeholder="State">
       </div>
       <div>
         <label>Country:</label><br>
@@ -58,7 +62,10 @@
       </div>
       <div>
         <label>Confirm Password:</label><br>
-        <input class="input-large" type="text" formControlName="confirmPassword" placeholder="Confirm Password">
+        <input class="input-large" id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+      </div>
+      <div>
+        <button class="button-small sign-up-button" (click)="signUp()">Sign Up</button>
       </div>
     </div>
   </div>

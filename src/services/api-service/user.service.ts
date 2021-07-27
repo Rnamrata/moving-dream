@@ -16,4 +16,9 @@ export class UserService {
     const headers = {};
     return this.http.post(environment.apiUrlWithVersion + '/loginWithPassword', body, {headers});
   }
+
+  createNewUser(body: any): Observable<any> {
+    const headers = {};
+    return this.http.post(environment.apiUrlWithVersion + '/insertUserInfo', body, {headers});
+  }
 }
