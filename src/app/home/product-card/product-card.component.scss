@@ -1,0 +1,16 @@
+@import "../../../styles";
+
+.container {
+  padding: 1%;
+
+  .product-name {
+    color: $color-midnight-blue;
+    font-family: $font-text;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  .price-text {
+    color: $color-chili-red;
+  }
+}

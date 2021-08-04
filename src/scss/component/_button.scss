@@ -31,3 +31,14 @@
   color: $color-white;
   background-color: $color-chili-red;
 }
+
+.search-button {
+  height: 7vh;
+  width: 5vw;
+  border: 1px solid;
+  border-radius: 5px;
+  background: $color-chili-red;
+  color: white;
+  font-family: $font-text;
+  font-weight: bold;
+}

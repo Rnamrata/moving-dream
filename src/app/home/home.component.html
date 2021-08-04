@@ -1,2 +1,19 @@
 <div class="body">
+  <div class="home-image"></div>
+  <div class="container">
+    <span>{{introText}}</span>
+    <div class="search">
+<!--      <div class="search-tag">-->
+<!--        {{searchTagLine}}-->
+<!--      </div>-->
+      <input type="text" class="search-input input-large be-inline" placeholder="Search desired product">
+      <button class="search-button be-inline">Search</button>
+    </div>
+    <hr>
+    <div *ngFor=" let product of products">
+      <div class="product-card">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+  </div>
 </div>

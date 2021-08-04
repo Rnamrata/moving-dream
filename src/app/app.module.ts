@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {SignUpModule} from './sign-up/sign-up.module';
+import {HomeModule} from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -22,16 +23,17 @@ import {SignUpModule} from './sign-up/sign-up.module';
     LoginComponent,
     SignUpComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    LoginModule,
-    NgbModule,
-    ReactiveFormsModule,
-    ShowHidePasswordModule,
-    SignUpModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        LoginModule,
+        NgbModule,
+        ReactiveFormsModule,
+        ShowHidePasswordModule,
+        SignUpModule,
+        HomeModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
